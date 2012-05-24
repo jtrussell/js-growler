@@ -1,0 +1,44 @@
+@import "mixins";
+
+@growler-width: 300px;
+@growler-spacing: 20px;
+@growler-text-align: left;
+@growler-text-padding: 10px;
+@growler-border-radius: 2px;
+@growler-opacity: 75; // Out of 100
+@growler-bg-color: #000;
+@growler-color: #ccc;
+@growler-shadow: 0 0 3px #333;
+
+#growler-zone {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	width: @growler-width;
+
+	.growler {
+		width: @growler-width;
+		margin-top: @growler-spacing;
+		position: relative;
+		.border-radius( @growler-border-radius );
+		.opacity( @growler-opacity );
+		background: @growler-bg-color;
+		color: @growler-color;
+		.box-shadow( @growler-shadow );
+
+		.growl-text {
+			width: @growler-width;
+			text-align: @growler-text-align;
+			padding: @growler-text-padding;
+		}
+
+		.growl-close {
+			position: absolute;
+			top: 0; right: 0;
+		}
+
+	}
+
+}
+
+
