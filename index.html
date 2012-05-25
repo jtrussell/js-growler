@@ -1,8 +1,8 @@
 <html>
 	<head>
-		<link rel="stylesheet/less" href="src/less/jsgrowler.less" />
+		<link rel="stylesheet/less" type="text/css" href="src/less/js-growler.less" />
 		<!--
-		<link rel="stylesheet/less" href="src/less/debug.less" />
+		<link rel="stylesheet/less" type="text/css" href="src/less/debug.less" />
 		-->
 	</head>
 	<body>
@@ -14,7 +14,7 @@
 				<div class="growl-text">
 					That wasn't supposed to happen
 				</div>
-				<a href="javascript:void(0)" class="growl-close">
+				<a href="javascript:void(0)" onclick="growler.hide(this)" class="growl-close">
 					<img src="lib/img/hide.png" alt="close" />
 				</a>
 			</div>
@@ -24,7 +24,7 @@
 				<div class="growl-text">
 					I haz the codez
 				</div>
-				<a href="javascript:void(0)" class="growl-close">
+				<a href="javascript:void(0)" onclick="growler.hide(this)" class="growl-close">
 					<img src="lib/img/hide.png" alt="close" />
 				</a>
 			</div>
@@ -34,7 +34,7 @@
 				<div class="growl-text">
 					Something is going on... yeah
 				</div>
-				<a href="javascript:void(0)" class="growl-close">
+				<a href="javascript:void(0)" onclick="growler.hide(this)" class="growl-close">
 					<img src="lib/img/hide.png" alt="close" />
 				</a>
 			</div>
@@ -44,6 +44,7 @@
 	</body>
 
 	<script type="text/javascript" src="src/js/less-1.3.0.min.js"></script>
+	<script type="text/javascript" src="src/js/js-growler.js"></script>
 
 </html>
 
