@@ -1,40 +1,48 @@
 @import "mixins";
 
-@growler-width: 300px;
-@growler-spacing: 20px;
-@growler-text-align: left;
-@growler-text-padding: 10px;
-@growler-border-radius: 2px;
-@growler-opacity: 75; // Out of 100
-@growler-bg-color: #000;
-@growler-color: #ccc;
-@growler-shadow: 0 0 3px #333;
+@width: 300px;
+@spacing: 20px;
+@text-align: left;
+@text-padding: 10px;
+@border-radius: 2px;
+@opacity: 75; // Out of 100
+@bg-color: #000;
+@color: #ccc;
+@shadow: 0 0 3px #333;
+@hide-image-size: 24px;
 
 #growler-zone {
 	position: fixed;
-	right: 30px;
+	right: 40px;
 	bottom: 30px;
-	width: @growler-width;
+	width: @width;
 
 	.growler {
-		width: @growler-width;
-		margin-top: @growler-spacing;
+		background: @bg-color;
+		border: 2px solid #CCC;
+		color: @color;
+		margin-top: @spacing;
+		padding: @text-padding;
 		position: relative;
-		.border-radius( @growler-border-radius );
-		.opacity( @growler-opacity );
-		background: @growler-bg-color;
-		color: @growler-color;
-		.box-shadow( @growler-shadow );
+		width: @width;
+		.border-radius( @border-radius );
+		.box-shadow( @shadow );
+		.opacity( @opacity );
+
+
+		.growl-title {
+			margin: 0 0 4px 0;
+			font-size: larger;
+		}
 
 		.growl-text {
-			width: @growler-width;
-			text-align: @growler-text-align;
-			padding: @growler-text-padding;
+			width: @width;
+			text-align: @text-align;
 		}
 
 		.growl-close {
 			position: absolute;
-			top: 0; right: 0;
+			top: -9px; right: -9px;
 		}
 
 	}
