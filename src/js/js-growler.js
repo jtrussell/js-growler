@@ -24,6 +24,7 @@
 				args = args || {}
 
 				var optKeys = Object.keys( opts )
+					, prepGrowler
 					, showGrowler
 					, ix 
 
@@ -32,6 +33,19 @@
 				// -----------------------------------------------------------
 				for( ix in optKeys ) {
 					opts[optKeys[ix]] = args[optKeys[ix]] || opts[optKeys[ix]]
+				}
+
+				// -----------------------------------------------------------
+				// Creates a new growler dom node and returns it to be inserted 
+				// -----------------------------------------------------------
+				prepGrowler = function() {
+				}
+
+				// -----------------------------------------------------------
+				// Places a growler node in the dom. If a method of displaying growlers
+				// was passed that is used, otherwise we do something defaulty
+				// -----------------------------------------------------------
+				showGrowler = function( growler ) {
 				}
 
 				// -----------------------------------------------------------
