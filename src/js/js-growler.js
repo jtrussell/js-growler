@@ -8,8 +8,10 @@
 	// -----------------------------------------------------------
 	opts = {
 		"hide_button_image": "../img/hide.png"
-		, "hide_function": false
-		, "show_function": false
+		, "hideFunction": false
+		, "showFunction": false
+		, "useHideButton": true
+		, "hideButtonImage": "lib/img/hide.png"
 	}
 
 	growler = (function( opts ) {
@@ -38,7 +40,27 @@
 				// -----------------------------------------------------------
 				// Creates a new growler dom node and returns it to be inserted 
 				// -----------------------------------------------------------
-				prepGrowler = function() {
+				prepGrowler = function( klass, body, title ) {
+					var growler = document.createElement("div")
+						, innerHTML = ""
+
+					title = title || ""
+
+					growler.className = "growler " + klass
+
+					if( title.length > 0 ) {
+						innerHTML += '<h3 class="growl-title">' + title + '</h3>'
+					}
+
+					innerHTML += '<div class="growl-text">' + body + '</div>'
+
+					if( opts.useHideButton ) {
+						innerHTML += '<a href="javascript:void(0)" onclick="growler.hide(this)" class="growl-close"><img src="lib/img/hide.png" alt="close" /></a>'
+					}
+
+					growler.innerHTML = innerHTML
+
+					return growler
 				}
 
 				// -----------------------------------------------------------
@@ -46,6 +68,7 @@
 				// was passed that is used, otherwise we do something defaulty
 				// -----------------------------------------------------------
 				showGrowler = function( growler ) {
+					// TODO
 				}
 
 				// -----------------------------------------------------------
@@ -53,9 +76,18 @@
 				// -----------------------------------------------------------
 				win.growler = new function() {
 					this.init = that.init
-					this.inform = function() {}
-					this.warn = function() {}
-					this.err = function() {}
+
+					this.inform = function( body, title ) {
+						showGrowler( prepGrowler( "inform", body, title ) )
+					}
+
+					this.warn = function( body, title ) {
+						showGrowler( prepGrowler( "warn", body, title ) )
+					}
+
+					this.err = function( body, title ) {
+						showGrowler( prepGrowler( "err", body, title ) )
+					}
 
 					// -----------------------------------------------------------
 					// Hides a clicked on growler, typicaly invoked by the
@@ -80,8 +112,8 @@
 						// hide function if one was provided - otherwise just
 						// remove the node itself from the dom
 						// -----------------------------------------------------------
-						if( opts.hide_function ) {
-							opts.hide_function( el )
+						if( opts.hideFunction ) {
+							opts.hideFunction( el )
 						} else {
 							el.parentNode.removeChild( el )
 						}
