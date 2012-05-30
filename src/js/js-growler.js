@@ -7,8 +7,7 @@
 	// Setup default options
 	// -----------------------------------------------------------
 	opts = {
-		"hide_button_image": "../img/hide.png"
-		, "hideFunction": false
+		"hideFunction": false
 		, "showFunction": false
 		, "useHideButton": true
 		, "hideButtonImage": "lib/img/hide.png"
@@ -28,6 +27,7 @@
 				var optKeys = Object.keys( opts )
 					, prepGrowler
 					, showGrowler
+					, hasClasName
 					, ix 
 
 				// -----------------------------------------------------------
@@ -68,7 +68,21 @@
 				// was passed that is used, otherwise we do something defaulty
 				// -----------------------------------------------------------
 				showGrowler = function( growler ) {
-					// TODO
+					if( opts.showFunction ) {
+						opts.showFunction( growler )
+					} else {
+						var growlerZone = document.getElementById('growler-zone')
+						growlerZone.appendChild( growler )
+					}
+				}
+
+				// -----------------------------------------------------
+				// Utility function to check if a pass element has a given class
+				// name
+				// -----------------------------------------------------
+				hasClassName = function( element, className ) {
+					var regexp = new RegExp( "\\b" + className + "\\b" )
+					return regexp.test( element.className )
 				}
 
 				// -----------------------------------------------------------
@@ -99,7 +113,7 @@
 						// dom to find the actual growler element we want to
 						// hide
 						// -----------------------------------------------------------
-						while( "growler" != el.className ) {
+						while( !hasClassName(el, "growler") ) {
 							el = el.parentNode
 							if( !el ) {
 								console.log( "Error attemtping to find a growler to hide" )

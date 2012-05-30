@@ -7,6 +7,101 @@
 	</head>
 	<body>
 
+		<div style="width:800px;margin: 0 auto;">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+				nunc libero, ullamcorper luctus laoreet ut, luctus sit amet
+				ligula.  Vivamus dictum viverra dictum. Fusce leo purus,
+				adipiscing ut euismod sed, interdum sed urna. Aliquam bibendum,
+				dui quis lobortis vulputate, mauris mauris tempor quam,
+				adipiscing luctus justo enim eu odio. Suspendisse tincidunt
+				lorem gravida libero cursus ultrices.  Nunc enim justo, rutrum
+				<a href="javascript:void(0)" onclick="growler.inform('My message', 'My Title')">
+					clicky
+				</a>
+				eu accumsan ut, cursus in urna. Pellentesque habitant morbi
+				tristique senectus et netus et malesuada fames ac turpis
+				egestas. Maecenas nec nulla elit, nec auctor eros. In consequat
+				tellus eu neque molestie non hendrerit dolor imperdiet.  Aliquam
+				erat volutpat. Donec quam mi, fermentum et fermentum id,
+				bibendum a urna. Fusce odio lorem, facilisis quis porttitor ac,
+				convallis ac lectus. Etiam nulla velit, mollis nec posuere
+				imperdiet, lacinia vel diam. Nunc ultrices gravida nisi, vel
+				pellentesque lorem imperdiet at. Nulla quis viverra tellus. Cras
+				sit amet nisl a mauris hendrerit luctus fermentum sit amet diam.
+			</p>
+
+			<p>
+				Integer vel tellus aliquet turpis imperdiet bibendum a eu
+				turpis.  Maecenas augue ipsum, adipiscing id aliquam nec,
+				euismod et mauris.  Nulla eget mauris felis, a suscipit est. In
+				ut nisi lacus, vel tempor nisl. Nullam dui nunc, ornare id
+				tempor nec, ullamcorper a tellus. Etiam malesuada nisl at augue
+				bibendum eleifend. Nullam ornare dapibus consectetur. Curabitur
+				<a href="javascript:void(0)" onclick="growler.warn('My message', 'My Title')">
+					clicky
+				</a>
+				semper felis cursus purus blandit euismod. In elementum mi et
+				est auctor eu aliquam massa suscipit. Praesent bibendum justo a
+				neque ullamcorper tempor. Mauris gravida elit et turpis vehicula
+				rhoncus. Nullam at massa quis metus tincidunt feugiat.
+			</p>
+
+			<p>
+				Sed congue elit in magna condimentum sit amet tristique lorem
+				dictum. Suspendisse pulvinar lorem id libero vestibulum ultrices
+				tincidunt metus bibendum. Cras molestie dui et sem rhoncus
+				semper.  Duis scelerisque, leo nec eleifend lobortis, velit nisi
+				tristique dui, sed feugiat enim est non massa. Curabitur
+				pulvinar lacus vulputate mi euismod et consectetur felis
+				gravida. Nam adipiscing lacinia suscipit. Pellentesque habitant
+				morbi tristique senectus et netus et malesuada fames ac turpis
+				egestas. In blandit ultricies ipsum, quis tincidunt risus
+				porttitor eget. Integer vel lectus sed sapien suscipit
+				<a href="javascript:void(0)" onclick="growler.err('My message', 'My Title')">
+					clicky
+				</a>
+				scelerisque non et nulla. Proin lacinia lacus a urna iaculis
+				malesuada malesuada nibh ultricies. Nam vitae ligula dolor.
+				Suspendisse in sagittis lectus. Maecenas mollis, urna et
+				venenatis ultricies, sapien elit commodo felis, et euismod est
+				tellus in tortor. Duis a turpis vitae lorem elementum semper nec
+				in lectus.  Nulla vestibulum urna a neque mollis varius.
+			</p>
+
+			<p>
+				Nunc in diam magna, a laoreet justo. Pellentesque quis tortor
+				vitae nisl tempus interdum. Nunc urna velit, vestibulum quis
+				lacinia in, facilisis ut orci. Pellentesque in mauris at ligula
+				ultricies tempor. Ut erat dolor, tincidunt varius vestibulum
+				vel, lacinia non velit. In non quam mi. Suspendisse lectus
+				<a href="javascript:void(0)" onclick="growler.inform('My message', 'My Title')">
+					clicky
+				</a>
+				libero, lobortis ut posuere id, posuere in risus. Nunc eget
+				accumsan lacus. Proin vehicula sagittis massa, at consequat urna
+				aliquam non. Curabitur ornare aliquet lectus, quis convallis
+				lorem vulputate et. Quisque vel eros massa, in dignissim erat.
+				Ut blandit vestibulum dictum.  Nullam non porttitor magna.
+			</p>
+
+			<p>
+				Sed sed justo erat, vel mollis urna. Morbi vitae elit felis.
+				Fusce consequat mattis mauris sit amet venenatis. Integer congue
+				arcu sit amet dolor ultrices euismod ultricies vel massa.
+				Phasellus cursus pharetra neque nec pharetra. Suspendisse
+				<a href="javascript:void(0)" onclick="growler.inform('My message', 'My Title')">
+					clicky
+				</a>
+				potenti. Ut rhoncus tellus ac nulla aliquet venenatis. Curabitur
+				vestibulum sagittis massa, nec semper est fringilla eu. Quisque
+				vitae erat dapibus nunc congue consequat nec vel erat. Mauris
+				ligula libero, bibendum vel lacinia posuere, cursus sit amet
+				odio. Phasellus sagittis est non purus porta sit amet feugiat
+				sapien tempor. Fusce euismod iaculis elementum. 
+			</p>
+		</div>
+
 		<div id="growler-zone">
 
 			<div class="growler">
@@ -19,7 +114,7 @@
 				</a>
 			</div>
 
-			<div class="growler">
+			<div class="growler err">
 				<h3 class="growl-title">Hooray!</h3>
 				<div class="growl-text">
 					I haz the codez
@@ -29,7 +124,7 @@
 				</a>
 			</div>
 
-			<div class="growler">
+			<div class="growler warn">
 				<h3 class="growl-title">Wowza!</h3>
 				<div class="growl-text">
 					Something is going on... yeah
@@ -47,4 +142,3 @@
 	<script type="text/javascript" src="src/js/js-growler.js"></script>
 
 </html>
-

@@ -5,11 +5,17 @@
 @text-align: left;
 @text-padding: 10px;
 @border-radius: 2px;
-@opacity: 75; // Out of 100
+@opacity: 90; // Out of 100
 @bg-color: #000;
 @color: #ccc;
 @shadow: 0 0 3px #333;
 @hide-image-size: 24px;
+
+@err-color: #fff;
+@err-bg-color: #993333;
+
+@warn-color: #000;
+@warn-bg-color: #990;
 
 #growler-zone {
 	position: fixed;
@@ -19,8 +25,8 @@
 
 	.growler {
 		background: @bg-color;
-		border: 2px solid #CCC;
 		color: @color;
+		border: 2px solid #CCC;
 		margin-top: @spacing;
 		padding: @text-padding;
 		position: relative;
@@ -45,6 +51,20 @@
 			top: -9px; right: -9px;
 		}
 
+	}
+
+	// Specific Growler Type Styles
+	.growler.inform {
+	}
+
+	.growler.warn {
+		color: @warn-color;
+		background: @warn-bg-color;
+	}
+
+	.growler.err {
+		color: @err-color;
+		background: @err-bg-color;
 	}
 
 }
