@@ -7,10 +7,34 @@
 	// Setup default options
 	// -----------------------------------------------------------
 	opts = {
+		// -----------------------------------------------------
+		// Function used to hide a growler alert - takes in a single parameter
+		// the growler dom element to hide
+		// -----------------------------------------------------
 		"hideFunction": false
+
+		// -----------------------------------------------------
+		// Function used to show a growler alert - takes in two parameters, the
+		// growler dom element to show and the growler zone dom element where
+		// growler elements are placed (i.e. the parent of growler elements in
+		// the dom)
+		// -----------------------------------------------------
 		, "showFunction": false
+
+		// -----------------------------------------------------
+		// True to use a hide, or close, button. False to leave it out
+		// -----------------------------------------------------
 		, "useHideButton": true
+
+		// -----------------------------------------------------
+		// Image to use for a hide button
+		// -----------------------------------------------------
 		, "hideButtonImage": "lib/img/hide.png"
+		
+		// -----------------------------------------------------
+		// ID of parent element of growler alerts
+		// -----------------------------------------------------
+		, "growlerZoneID": "growler-zone"
 	}
 
 	growler = (function( opts ) {
@@ -55,7 +79,8 @@
 					innerHTML += '<div class="growl-text">' + body + '</div>'
 
 					if( opts.useHideButton ) {
-						innerHTML += '<a href="javascript:void(0)" onclick="growler.hide(this)" class="growl-close"><img src="lib/img/hide.png" alt="close" /></a>'
+						var imgSrc = opts.hideButtonImage
+						innerHTML += '<a href="javascript:void(0)" onclick="growler.hide(this)" class="growl-close"><img src="'+imgSrc+'" alt="close" /></a>'
 					}
 
 					growler.innerHTML = innerHTML
@@ -67,11 +92,11 @@
 				// Places a growler node in the dom. If a method of displaying growlers
 				// was passed that is used, otherwise we do something defaulty
 				// -----------------------------------------------------------
-				showGrowler = function( growler ) {
+				showGrowler = function( growler, growlerZone ) {
+					growlerZone = growlerZone || document.getElementById( opts.growlerZoneID )
 					if( opts.showFunction ) {
-						opts.showFunction( growler )
+						opts.showFunction( growler, growlerZone )
 					} else {
-						var growlerZone = document.getElementById('growler-zone')
 						growlerZone.appendChild( growler )
 					}
 				}

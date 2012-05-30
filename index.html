@@ -103,42 +103,15 @@
 		</div>
 
 		<div id="growler-zone">
-
-			<div class="growler">
-				<h3 class="growl-title">Oh Snap :(</h3>
-				<div class="growl-text">
-					That wasn't supposed to happen
-				</div>
-				<a href="javascript:void(0)" onclick="growler.hide(this)" class="growl-close">
-					<img src="lib/img/hide.png" alt="close" />
-				</a>
-			</div>
-
-			<div class="growler err">
-				<h3 class="growl-title">Hooray!</h3>
-				<div class="growl-text">
-					I haz the codez
-				</div>
-				<a href="javascript:void(0)" onclick="growler.hide(this)" class="growl-close">
-					<img src="lib/img/hide.png" alt="close" />
-				</a>
-			</div>
-
-			<div class="growler warn">
-				<h3 class="growl-title">Wowza!</h3>
-				<div class="growl-text">
-					Something is going on... yeah
-				</div>
-				<a href="javascript:void(0)" onclick="growler.hide(this)" class="growl-close">
-					<img src="lib/img/hide.png" alt="close" />
-				</a>
-			</div>
-
+			<!-- Growlers go here -->
 		</div>
 
 	</body>
 
 	<script type="text/javascript" src="src/js/less-1.3.0.min.js"></script>
 	<script type="text/javascript" src="src/js/js-growler.js"></script>
+	<script type="text/javascript">
+		growler.inform("Growler is ready! Go forth and pester users with beautify alerts!", "Hooray!")
+	</script>
 
 </html>
