@@ -51,7 +51,7 @@
 				var optKeys = Object.keys( opts )
 					, prepGrowler
 					, showGrowler
-					, hasClasName
+					, hasClassName
 					, ix 
 
 				// -----------------------------------------------------------
